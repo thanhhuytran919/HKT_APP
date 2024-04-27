@@ -335,12 +335,12 @@ class YOLOv5App(tk.Tk):
                 # Viết kết quả suy luận vào file CSV từ các luật
                 if self.rules:
                     for rule in self.rules:
+                        # Lấy danh sách các phần tử trong lhs và rhs
                         A, B = rule.lhs, rule.rhs
-                        # Lặp qua các phần tử trong lhs và rhs và ghi vào file CSV
+                        # Ghi mỗi cặp phần tử của lhs và rhs vào file CSV
                         for item_A in A:
                             for item_B in B:
                                 writer.writerow({'A': item_A, 'B': item_B})
-
 
 if __name__ == "__main__":
     app = YOLOv5App()
