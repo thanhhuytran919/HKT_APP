@@ -2,3 +2,4 @@ efficient_apriori
 torch
 tk
 Pillow
+torchvision
