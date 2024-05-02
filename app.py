@@ -337,10 +337,12 @@ class YOLOv5App(tk.Tk):
                     for rule in self.rules:
                         # Lấy danh sách các phần tử trong lhs và rhs
                         A, B = rule.lhs, rule.rhs
-                        # Ghi mỗi cặp phần tử của lhs và rhs vào file CSV
-                        for item_A in A:
-                            for item_B in B:
-                                writer.writerow({'A': item_A, 'B': item_B})
+                        # Chuyển danh sách thành chuỗi
+                        A_str = ', '.join(A)
+                        B_str = ', '.join(B)
+                        # Ghi chuỗi vào file CSV
+                        writer.writerow({'A': A_str, 'B': B_str})
+
 
 if __name__ == "__main__":
     app = YOLOv5App()
